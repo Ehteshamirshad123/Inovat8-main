@@ -1,0 +1,63 @@
+/* Define the font-face */
+@font-face {
+  font-family: 'BauhausStd-Light';
+  src: url('../assets/fonts/BauhausStd-Light.ttf') format('truetype');
+  font-weight: 300;
+}
+
+/* Global styles for full-height elements and background */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom right, #000000, #3533CD);
+  font-family: 'BauhausStd-Light';
+  /* Add fallback fonts */
+}
+/* Scrollable content wrapper */
+.scrollable-content {
+  overflow-y: scroll; /* Allows vertical scrolling */
+  height: 100vh; /* Full height of the viewport */
+}
+
+/* General styles for the entire app */
+body {
+  margin: 0;
+  padding: 0;
+ }
+
+ 
+h1, h2, h3, h4 {
+  margin: 0;
+  padding: 0;
+  font-family: 'BauhausStd-Bold';
+
+}
+.App {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  /* Navbar at the top, content below */
+}
+
+.scrollable-content {
+  height: 100%;
+  overflow-y: scroll;
+  /* Enable scrolling but hide scrollbar */
+}
+
+/* Hide scrollbars */
+::-webkit-scrollbar {
+  display: none;
+}
+.scrollable-content {
+  scrollbar-width: none;
+  /* For Firefox */
+  -ms-overflow-style: none;
+  /* For IE and Edge */
+}
+ 
+ 
+ 
+ 
