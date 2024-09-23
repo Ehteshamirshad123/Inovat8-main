@@ -1,16 +1,37 @@
 import React from 'react';
+import { useInView } from 'react-intersection-observer';
 import '../styles/Footer.css';
 import innova8 from '../assets/images/Innovat8.svg';
 import plane from '../assets/images/plane.png';
+
+const FooterSection = ({ children, delay }) => {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  return (
+    <div
+      className={`footer-section ${inView ? 'slide-in' : 'hidden'}`}
+      ref={ref}
+      style={{ animationDelay: `${delay}s` }}
+    >
+      {children}
+    </div>
+  );
+};
+
 const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-container">
-        <div className="footer-logo">
-          <img src={innova8} alt="Innov8 Logo" />
-        </div>
+        <FooterSection delay={0.1}>
+          <div className="footer-logo">
+            <img src={innova8} alt="Innov8 Logo" />
+          </div>
+        </FooterSection>
 
-        <div className="footer-section">
+        <FooterSection delay={0.3}>
           <h3>Company</h3>
           <ul>
             <li>About Us</li>
@@ -23,9 +44,9 @@ const Footer = () => {
             <li>Privacy Statement</li>
             <li>Terms & Conditions</li>
           </ul>
-        </div>
+        </FooterSection>
 
-        <div className="footer-section">
+        <FooterSection delay={0.5}>
           <h3>Experience</h3>
           <ul>
             <li>Projects</li>
@@ -33,9 +54,9 @@ const Footer = () => {
             <li>Blogs</li>
             <li>Technologies</li>
           </ul>
-        </div>
+        </FooterSection>
 
-        <div className="footer-section">
+        <FooterSection delay={0.7}>
           <h3>Contact Us</h3>
           <p>Email: hello@innov8.com</p>
           <p>Headquarters:</p>
@@ -50,15 +71,15 @@ const Footer = () => {
             <li>Qatar</li>
             <li>Pakistan</li>
           </ul>
-        </div>
+        </FooterSection>
 
-        <div className="footer-section">
+        <FooterSection delay={0.9}>
           <h3>Stay Up To Date</h3>
           <p>Subscribe to our newsletter.</p>
           <form className="newsletter-form">
             <input type="email" placeholder="Email" />
             <button type="submit">
-            <i className="icon-send"><img src={plane} alt="" /></i>
+              <i className="icon-send"><img src={plane} alt="" /></i>
             </button>
           </form>
           <p>
@@ -66,7 +87,7 @@ const Footer = () => {
             granting permission to receive updates from our company.
           </p>
           <p>You can unsubscribe anytime.</p>
-        </div>
+        </FooterSection>
       </div>
 
       <div className="footer-bottom">

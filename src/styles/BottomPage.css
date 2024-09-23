@@ -56,13 +56,13 @@
 }
 .talk-button {
     padding: 12px 30px;
+    margin-top: 3%;
     background: #022D62;
     color: white;
     font-size: 15px;
     border-radius: 5px;
     cursor: pointer;
     display: block;
-    margin-bottom: 30px;
 }
 .call-details {
     display: flex;

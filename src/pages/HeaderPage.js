@@ -21,8 +21,8 @@ const Header = () => {
     const [isAnimating, setIsAnimating] = useState(false);
     const textRef = useRef(null);
 
-    const hideDuration = 1000; // Duration for hiding the text
-    const showDuration = 4000; // Duration to show the text (before hiding again)
+    const hideDuration = 1500; // Duration for hiding the text
+    const showDuration = 5000; // Duration to show the text (before hiding again)
     useEffect(() => {
         const interval = setInterval(() => {
             // Trigger hide animation first
